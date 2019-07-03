@@ -1,0 +1,36 @@
+{
+  "name": "obj-gen",
+  "version": "1.0.0",
+  "description": "Generate objects based on generator and JSON",
+  "keywords": [
+    "object",
+    "generator",
+    "generate"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "node test",
+    "lint": "eslint ."
+  },
+  "files": [
+    "index.js"
+  ],
+  "ci": {
+    "version": "8, 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/985ch/obj-gen.git"
+  },
+  "homepage": "https://github.com/985ch/obj-gen#readme",
+  "author": "985ch",
+  "license": "MIT"
+}
