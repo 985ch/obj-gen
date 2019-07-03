@@ -88,6 +88,15 @@ work.project.test();
 ```
 More usage can be found in [test.js](./test.js)
 
+## Attributes
+
+| name | format | description |
+|:-----|:-------|:------------|
+| $generator | (member)=>{} | Generator, when there is this property under the object, it will generate an object based on $members |
+| $keygen | (obj)=>{} | Key generator, when member is an object, calculate the key according to member, the default is (obj)=>obj.$key |
+| $members | Array | Each object in the array will become the member of $generator | 
+| $key | String | When $keygen is not specified, member defaults to $key as key |
+
 ## Unit tests
 
 ```sh

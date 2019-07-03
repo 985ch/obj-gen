@@ -41,12 +41,13 @@ const config = {
 };
 
 const newConfig = {
-  $generator: doSth => {
+  $generator: list => {
     return function(name) {
-      console.log(doSth + ' with ' + name);
+      console.log(list[1] + name);
     };
   },
-  $members: [ 'play', 'work' ],
+  $keygen: member => member[0],
+  $members: [[ 'play', 'play games with ' ], [ 'work', 'work with ' ]],
 };
 
 let caller = null;

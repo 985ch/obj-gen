@@ -87,6 +87,14 @@ work.project.test();
 ```
 在[test.js](./test.js)中可以看到更多用法
 
+## 属性说明
+| 属性 | 格式 | 描述 |
+|:-----|:----|:-----|
+| $generator | (member)=>{} | 对象成员生成器，在任意对象下只要有这个属性就会根据$members数组生成对象 |
+| $keygen | (obj)=>{} | 对象属性键值获取函数，当member是对象时，根据member获取键值，默认是(obj)=>obj.$key |
+| $members | Array | 数组中的每个对象都会作为member参数传给$generator | 
+| $key | String | 在没有指定$keygen的时候，默认使用$key作为键值 |
+
 ## 测试
 
 ```sh
