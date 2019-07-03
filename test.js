@@ -40,15 +40,6 @@ const config = {
   },
 };
 
-const caller = generate(config);
-
-caller.greet.hello('sachiko');
-caller.greet.hi('momoka');
-caller.work.projectA.test();
-caller.work.projectA.run();
-caller.work.projectA.path = './obj-gen';
-caller.work.projectA.test();
-
 const newConfig = {
   $generator: doSth => {
     return function(name) {
@@ -58,6 +49,21 @@ const newConfig = {
   $members: [ 'play', 'work' ],
 };
 
-generate(newConfig, caller);
-caller.play('momoka');
-caller.work('sachiko');
+let caller = null;
+describe('Test', function() {
+  it('Create', function() {
+    caller = generate(config);
+
+    caller.greet.hello('sachiko');
+    caller.greet.hi('momoka');
+    caller.work.projectA.test();
+    caller.work.projectA.run();
+    caller.work.projectA.path = './obj-gen';
+    caller.work.projectA.test();
+  });
+  it('Addition', function() {
+    generate(newConfig, caller);
+    caller.play('momoka');
+    caller.work('sachiko');
+  });
+});

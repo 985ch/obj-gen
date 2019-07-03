@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "node test",
+    "test-local": "mocha test",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
     "lint": "eslint ."
   },
