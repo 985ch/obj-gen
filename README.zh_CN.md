@@ -1,4 +1,4 @@
-# egg-router-factory
+# obj-gen-9
 
 ![node version][node-image]
 [![NPM version][npm-image]][npm-url]
