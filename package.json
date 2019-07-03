@@ -1,5 +1,5 @@
 {
-  "name": "obj-gen",
+  "name": "obj-gen-9",
   "version": "1.0.0",
   "description": "Generate objects based on generator and JSON",
   "keywords": [
@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/985ch/obj-gen.git"
+    "url": "git+https://github.com/985ch/obj-gen-9.git"
   },
-  "homepage": "https://github.com/985ch/obj-gen#readme",
+  "homepage": "https://github.com/985ch/obj-gen-9#readme",
   "author": "985ch",
   "license": "MIT"
 }
