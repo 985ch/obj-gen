@@ -41,13 +41,14 @@ const config = {
 };
 
 const newConfig = {
-  $generator: list => {
+  $generator: (list, { myname }) => {
     return function(name) {
-      console.log(list[1] + name);
+      console.log(`${myname} ${list[1]} ${name}`);
     };
   },
   $keygen: member => member[0],
-  $members: [[ 'play', 'play games with ' ], [ 'work', 'work with ' ]],
+  $members: [[ 'play', 'play games with' ], [ 'work', 'work with' ]],
+  myname: '985ch',
 };
 
 let caller = null;

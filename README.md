@@ -55,9 +55,10 @@ const generate = require('obj-gen-9');
 
 const config = {
   project: {
-    $generator: obj => {
+    $generator: (obj, config) => {
       if (obj.cmd) {
         return function() {
+          console.log(config.projectName);
           console.log('cd ' + this.path);
           console.log(obj.cmd);
         };
@@ -76,6 +77,7 @@ const config = {
         value: './',
       },
     ],
+    projectName: 'TestProject',
   },
 };
 
@@ -92,7 +94,7 @@ More usage can be found in [test.js](./test.js)
 
 | name | format | description |
 |:-----|:-------|:------------|
-| $generator | (member)=>{} | Generator, when there is this property under the object, it will generate an object based on $members |
+| $generator | (member, config)=>{} | Generator, when there is this property under the object, it will generate an object based on $members |
 | $keygen | (obj)=>{} | Key generator, when member is an object, calculate the key according to member, the default is (obj)=>obj.$key |
 | $members | Array | Each object in the array will become the member of $generator | 
 | $key | String | When $keygen is not specified, member defaults to $key as key |
