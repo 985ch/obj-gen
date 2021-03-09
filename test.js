@@ -51,6 +51,21 @@ const newConfig = {
   myname: '985ch',
 };
 
+const configPlus = {
+  $generator: obj => {
+    return function(name) {
+      console.log(`${this.myname} ${obj.action} ${name}`);
+    };
+  },
+  $members: [{
+    $key: 'play',
+    action: 'play games with',
+  }, {
+    $key: 'work',
+    action: 'work with',
+  }],
+};
+
 let caller = null;
 describe('Test', function() {
   it('Create', function() {
@@ -67,5 +82,10 @@ describe('Test', function() {
     generate(newConfig, caller);
     caller.play('momoka');
     caller.work('sachiko');
+  });
+  it('Extend', function() {
+    const me = generate(configPlus, {}, { myname: '985ch' });
+    me.play('momoka');
+    me.work('sachiko');
   });
 });

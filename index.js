@@ -20,13 +20,16 @@ function generateObject(parent, config) {
   return parent;
 }
 
-function generate(config, parent = {}) {
+function generate(config, parent = {}, extend = {}) {
   if (config.$generator) {
     if (!config.$members) throw new Error('invalid $members');
     generateObject(parent, config);
+    for (const key in extend) {
+      parent[key] = extend[key];
+    }
   } else {
     for (const key in config) {
-      parent[key] = generate(config[key]);
+      parent[key] = generate(config[key], parent, extend);
     }
   }
 
